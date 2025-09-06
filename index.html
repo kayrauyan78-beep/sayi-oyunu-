@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayı Oyunu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+  <button id="startBtn">Başla</button>
+  <div id="numbers"></div>
+  <div id="target"></div>
+  <div>
+    <label><input type="checkbox" id="voiceToggle"> Sesli</label>
+  </div>
+  <div id="display"></div>
+  <div id="calculator">
+    <div>
+      <button onclick="clickButton('1')">1</button>
+      <button onclick="clickButton('2')">2</button>
+      <button onclick="clickButton('3')">3</button>
+      <button onclick="clickButton('+')">+</button>
+    </div>
+    <div>
+      <button onclick="clickButton('4')">4</button>
+      <button onclick="clickButton('5')">5</button>
+      <button onclick="clickButton('6')">6</button>
+      <button onclick="clickButton('-')">-</button>
+    </div>
+    <div>
+      <button onclick="clickButton('7')">7</button>
+      <button onclick="clickButton('8')">8</button>
+      <button onclick="clickButton('9')">9</button>
+      <button onclick="clickButton('*')">*</button>
+    </div>
+    <div>
+      <button onclick="clickButton('0')">0</button>
+      <button onclick="clickButton('C')">C</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="clickButton('/')">/</button>
+    </div>
+  </div>
+  <div id="message"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
