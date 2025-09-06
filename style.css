@@ -1,0 +1,8 @@
+body { margin:0; padding:0; font-family:sans-serif; display:flex; justify-content:center; }
+#game { text-align:center; max-width:400px; width:95%; margin:20px auto; }
+#numbers, #target, #display, #message { margin:10px 0; font-size:24px; word-wrap: break-word; }
+button { margin:2px; padding:10px 0; font-size:20px; }
+#calculator button { width:22%; height:60px; font-size:18px; }
+@media (max-width:500px){
+  #calculator button { width:22%; height:50px; font-size:16px; }
+}
