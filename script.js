@@ -1,11 +1,13 @@
 let numbers = [];
 let target = 0;
 let userInput = "";
+let attempts = 0;
 
 document.getElementById("startBtn").addEventListener("click", startGame);
 
 function startGame(){
   userInput = "";
+  attempts = 0;
   document.getElementById("message").innerText = "";
   numbers = [];
   for(let i=0;i<4;i++){
@@ -66,7 +68,14 @@ function calculate(){
     document.getElementById("message").innerText = "Tebrikler! Doğru!";
     if(document.getElementById("voiceToggle").checked) speak("Tebrikler! Doğru!");
   }else{
-    wrongAnswer(result);
+    attempts++;
+    if(attempts >= 3){
+      let answer = `${numbers[0]} ${op1} ${numbers[1]} ${op2} ${numbers[2]} ${op3} ${numbers[3]}`;
+      document.getElementById("message").innerText = "Üzgünüm! Cevap: " + answer;
+      if(document.getElementById("voiceToggle").checked) speak("Üzgünüm! Cevap: " + answer);
+    }else{
+      wrongAnswer(result);
+    }
   }
 }
 
@@ -79,5 +88,6 @@ function wrongAnswer(res){
 
 function speak(text){
   let msg = new SpeechSynthesisUtterance(text);
+  msg.lang = 'tr-TR'; // Türkçe sesi ayarladık
   window.speechSynthesis.speak(msg);
 }
